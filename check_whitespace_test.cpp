@@ -5,7 +5,6 @@
 TEST(strip, EmptyString) {
     const char *result = strip("");
     ASSERT_STREQ("", result);
-    free((char*)result);
 }
 
 TEST(strip, NoWhitespace) {
