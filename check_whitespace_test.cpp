@@ -5,23 +5,32 @@
 TEST(strip, EmptyString) {
     const char *result = strip("");
     ASSERT_STREQ("", result);
-    free((char*) result);
+    free((char*)result);
 }
 
 TEST(strip, NoWhitespace) {
-    ASSERT_STREQ("frog", strip("frog"));
+    const char *result = strip("frog");
+    ASSERT_STREQ("frog", result);
+    free((char*)result);
 }
 
 TEST(strip, WhitespaceOnFront) {
-    ASSERT_STREQ("frog", strip("   frog"));
+    const char *result = strip("   frog");
+    ASSERT_STREQ("frog", result);
+    free((char*)result);
+
 }
 
 TEST(strip, WhitespaceOnBack) {
-    ASSERT_STREQ("frog", strip("frog  "));
+    const char *result = strip("frog  ");
+    ASSERT_STREQ("frog", result);
+    free((char*)result);
 }
 
 TEST(strip, WhitespaceOnBothEnds) {
-    ASSERT_STREQ("frog", strip("  frog     "));
+    const char *result = strip("  frog     ");
+    ASSERT_STREQ("frog", result);
+    free((char*)result);
 }
 
 TEST(is_clean, EmptyString) {
