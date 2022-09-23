@@ -3,7 +3,9 @@
 #include "check_whitespace.h"
 
 TEST(strip, EmptyString) {
-    ASSERT_STREQ("", strip(""));
+    const char *result = strip("");
+    ASSERT_STREQ("", result);
+    free((char*) result);
 }
 
 TEST(strip, NoWhitespace) {
